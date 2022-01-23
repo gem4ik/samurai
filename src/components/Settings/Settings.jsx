@@ -5,7 +5,7 @@ const Settings = () => {
   return (
     <header >
       <div >
-      Settings
+      Settingssss
       </div>
     </header>
   );
