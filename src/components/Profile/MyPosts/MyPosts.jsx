@@ -2,15 +2,10 @@ import React, { Component } from 'react';
 import s from './MyPosts.module.css'
 import Post from './Post/Post';
 
-let posts = [
-  {post:'Hello, World', likeValue:3},
-  {post:"It's my first post", likeValue:4},
-  {post:"It's my first post", likeValue:7},
-]
+const MyPosts = (props) => {
 
-let postsElements = posts.map (p => <Post post={p.post} likeValue={p.likeValue}/>)
+  let postsElements = props.posts.map (p => <Post post={p.post} likeValue={p.likeValue}/>)
 
-const MyPosts = () => {
   return (
     <div>
       <div>
@@ -23,7 +18,7 @@ const MyPosts = () => {
         <button className={s.button}>clear</button>
         <div>
         {postsElements}
-        </div>
+        </div> 
     </div>
   );
 }
