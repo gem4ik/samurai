@@ -1,0 +1,11 @@
+.usersAva {
+    width: 30px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.Users {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "a a a";
+}

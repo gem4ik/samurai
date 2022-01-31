@@ -8,7 +8,6 @@ const Post = (props) => {
             <img src='https://wow.zamimg.com/uploads/screenshots/small/661512.jpg'></img>
             { props.post }</div>
             <a href='#'> { props.likeValue } likes</a>
-            
       </div>
   );
 }
