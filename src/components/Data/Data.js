@@ -6,7 +6,8 @@ let Data = {
             { id: 1, post: 'Hello, World', likeValue: 8 },
             { id: 2, post: "It's my first post", likeValue: 4 },
             { id: 3, post: "It's my first post", likeValue: 7 }
-        ]
+        ],
+        newPostText: 'it-kama'
     },
     Message: {
         dialogs: [
@@ -38,6 +39,11 @@ export let addPost = (newMessage) => {
         likeValue: 0
     }
     Data.Profile.posts.push(newPost)
+    rerenderEntireTree(Data)
+}
+
+export let updateTextValue = (newText) => {
+    Data.Profile.newPostText = newText
     rerenderEntireTree(Data)
 }
 

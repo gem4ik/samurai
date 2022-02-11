@@ -23,7 +23,10 @@ const App = (props) => {
             </Route>
             <Route path="/profile/*" element={<Profile
               posts={props.Data.Profile.posts}
-              addPost={props.addPost} />}>
+              addPost={props.addPost} 
+              newPostText={props.Data.Profile.newPostText}
+              updateTextValue={props.updateTextValue}
+              />}>
             </Route>
             <Route path="/news/*" element={<News />}></Route>
             <Route path="/music/*" element={<Music />}></Route>
