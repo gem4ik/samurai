@@ -10,3 +10,10 @@
 .active {
   color: rgb(255, 0, 0);
 }
+
+.friendsBar {
+  color: blue;
+  padding-top: 50px;
+  font-size: xx-large;
+  text-align: center;
+}
