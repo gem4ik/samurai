@@ -2,7 +2,8 @@
     display: grid;
     grid-template-columns: 2fr 10fr;
     grid-template-rows: 1fr;
-    padding: 20px;
+    padding-top: 10px;
+    padding-left: 20px;
 }
 
 .textArea {

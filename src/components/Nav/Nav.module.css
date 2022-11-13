@@ -2,18 +2,27 @@
   grid-area: n;
   background-color: rgb(229, 255, 0);
   padding: 10px;
+  font-family: sans-serif;
+  line-height: 25px;
 }
 
-.link a {
-  text-decoration: none;
-}
+
 .active {
   color: rgb(255, 0, 0);
+  text-decoration: none;
 }
 
 .friendsBar {
   color: blue;
-  padding-top: 50px;
+  padding-top: 40px;
   font-size: xx-large;
   text-align: center;
+}
+
+.item {
+  text-decoration: none;
+}
+
+.users {
+  margin-top: 10px;
 }

@@ -21,11 +21,9 @@ const MyPosts = (props) => {
   
   return (
     <div>
-      <div>
         <div>My Posts</div>
-      </div>
       <div className={s.textarea}>
-        <textarea ref={newPostElement} onChange={onPostChange}></textarea>
+        <textarea ref={newPostElement} onChange={onPostChange} className={s.textitem}></textarea>
       </div>
       <button className={s.button} onClick={ ButtonAddPost }>add post</button>
       <button className={s.button}>clear</button>
