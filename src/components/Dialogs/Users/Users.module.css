@@ -9,10 +9,11 @@
 
 .users {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "a a a";
 }
 
 .user {
     margin: 10px;
+    text-align: center;
 }
