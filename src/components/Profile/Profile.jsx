@@ -3,7 +3,7 @@ import Myposts from './MyPosts/MyPosts';
 import s from './Profile.module.css'
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
-const Profile = (props) => {
+const profile = (props) => {
   return (
     <div>
       <div><ProfileInfo /></div>
@@ -18,4 +18,4 @@ const Profile = (props) => {
   );
 }
 
-export default Profile;
+export default profile;

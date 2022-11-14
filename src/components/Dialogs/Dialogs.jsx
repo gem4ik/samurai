@@ -1,34 +1,23 @@
-import React, { Component } from 'react';
-import s from './Dialogs.module.css'
-import DialogItem from './DialogItem/DialogItem'
-import Message from './Message/Message';
+import React, { Component } from "react";
+import s from "./Dialogs.module.css";
+import DialogItem from "./DialogItem/DialogItem";
+import Message from "./Message/Message";
+import { NavLink } from "react-router-dom";
 
-const Dialogs = (props) => {
-
-  let dialogsElements = props.dialogs.map(d => <DialogItem id={d.id} name={d.name} />)
-  let messagesElements = props.messages.map(m => <Message id={m.id} message={m.message} />)
-
-  let dialogArea = React.createRef()
-
-  let messageArea = () => {
-     let messageArea = dialogArea.current.value
-     alert(messageArea)
-  }
+const dialogs = (props) => {
+  let dialogsElements = props.dialogs.map((dialog) => (
+    <DialogItem id={dialog.id} name={dialog.name} />
+  ));
+  let messagesElements = props.messages.map((message) => (
+    <Message id={message.id} message={message.message} />
+  ));
 
   return (
     <div className={s.dialogs}>
-      <div>
-        {dialogsElements}
-        </div>
-      <div>
-        {messagesElements}
-        </div>
-      <div className={s.textArea}>
-        <textarea ref={dialogArea}></textarea>
-        <button onClick={messageArea} >send</button>
-      </div>
+      <div>{dialogsElements}</div>
+      <div>{messagesElements}</div>
     </div>
   );
-}
+};
 
-export default Dialogs;
+export default dialogs;
