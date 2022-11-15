@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import s from './MyPosts.module.css'
+import style from './MyPosts.module.css'
 import Post from './Post/Post';
 
 const MyPosts = (props) => {
@@ -22,11 +22,11 @@ const MyPosts = (props) => {
   return (
     <div>
         <div>My Posts</div>
-      <div className={s.textarea}>
-        <textarea ref={newPostElement} onChange={onPostChange} className={s.textitem}></textarea>
+      <div className={style.textarea}>
+        <textarea ref={newPostElement} onChange={onPostChange} className={style.textitem}></textarea>
       </div>
-      <button className={s.button} onClick={ ButtonAddPost }>add post</button>
-      <button className={s.button}>clear</button>
+      <button className={style.button} onClick={ ButtonAddPost }>add post</button>
+      <button className={style.button}>clear</button>
       <div>
         {postsElements}
       </div>

@@ -1,10 +1,12 @@
-.dialogs {
+.messagePage {
     display: grid;
     grid-template-columns: 2fr 10fr;
     grid-template-rows: 1fr;
     padding-top: 10px;
     padding-left: 20px;
 }
+
+
 
 .textArea {
     grid-column-start: 2;

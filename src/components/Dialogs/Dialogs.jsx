@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import s from "./Dialogs.module.css";
+import style from "./Dialogs.module.css";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 import { NavLink } from "react-router-dom";
@@ -13,9 +13,9 @@ const dialogs = (props) => {
   ));
 
   return (
-    <div className={s.dialogs}>
-      <div>{dialogsElements}</div>
-      <div>{messagesElements}</div>
+    <div className={style.messagePage}>
+      <div className={style.dialog}>{dialogsElements}</div>
+      <div className={style.message}>{messagesElements}</div>
     </div>
   );
 };

@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import s from "./Nav.module.css";
+import style from "./Nav.module.css";
 import Users from "./../Dialogs/Users/Users";
 
 const Nav = () => {
   return (
-    <div className={s.nav}>
+    <div className={style.nav}>
       <nav>
         <div>
           <NavLink
             to="/profile"
-            className={(navData) => (navData.isActive ? s.active : s.item)}
+            className={(navData) => (navData.isActive ? style.active : style.item)}
           >
             Profile
           </NavLink>
@@ -18,7 +18,7 @@ const Nav = () => {
         <div>
           <NavLink
             to="/dialog"
-            className={(navData) => (navData.isActive ? s.active : s.item)}
+            className={(navData) => (navData.isActive ? style.active : style.item)}
           >
             Messages
           </NavLink>
@@ -26,7 +26,7 @@ const Nav = () => {
         <div>
           <NavLink
             to="/news"
-            className={(navData) => (navData.isActive ? s.active : s.item)}
+            className={(navData) => (navData.isActive ? style.active : style.item)}
           >
             News
           </NavLink>
@@ -34,7 +34,7 @@ const Nav = () => {
         <div>
           <NavLink
             to="/music"
-            className={(navData) => (navData.isActive ? s.active : s.item)}
+            className={(navData) => (navData.isActive ? style.active : style.item)}
           >
             Music
           </NavLink>
@@ -42,21 +42,21 @@ const Nav = () => {
         <div>
           <NavLink
             to="/settings"
-            className={(navData) => (navData.isActive ? s.active : s.item)}
+            className={(navData) => (navData.isActive ? style.active : style.item)}
           >
             Settings
           </NavLink>
         </div>
       </nav>
-      <div className={s.friendsBar}>
+      <div className={style.friendsBar}>
         <NavLink
           to="/friends"
-          className={(navData) => (navData.isActive ? s.active : s.item)}
+          className={(navData) => (navData.isActive ? style.active : style.item)}
         >
           Friends
         </NavLink>
       </div>
-      <div className={s.users}>
+      <div className={style.users}>
         <Users />
       </div>
     </div>
