@@ -7,7 +7,7 @@ let Data = {
             { id: 2, post: "It's my first post", likeValue: 4 },
             { id: 3, post: "It's my first post", likeValue: 7 }
         ],
-        newPostText: 'it-kama'
+        newPostText: ''
     },
     Message: {
         dialogs: [
@@ -32,13 +32,14 @@ let Data = {
     }
 }
 
-export let addPost = (newMessage) => {
+export let addPost = () => {
     let newPost = {
         id: 4,
-        post: newMessage,
+        post: Data.Profile.newPostText,
         likeValue: 0
     }
     Data.Profile.posts.push(newPost)
+    Data.Profile.newPostText = ''
     rerenderEntireTree(Data)
 }
 
