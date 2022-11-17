@@ -17,8 +17,6 @@ let Data = {
             { id: 4, name: 'Misha' },
             { id: 5, name: 'Kostya' },
             { id: 6, name: 'Vova' },
-            { id: 7, name: 'Kirill' },
-            { id: 8, name: 'Sasha' }
         ],
         messages: [
             { id: 1, message: 'I' },
