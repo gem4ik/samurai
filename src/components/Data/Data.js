@@ -1,4 +1,4 @@
-import { rerenderEntireTree } from './../../rerender/rerender'
+let rerenderEntireTree = () => {}
 
 let Data = {
     Profile: {
@@ -30,7 +30,7 @@ let Data = {
     }
 }
 
-export let addPost = () => {
+export const addPost = () => {
     let newPost = {
         id: 4,
         post: Data.Profile.newPostText,
@@ -41,9 +41,13 @@ export let addPost = () => {
     rerenderEntireTree(Data)
 }
 
-export let updateTextValue = (newText) => {
+export const updateTextValue = (newText) => {
     Data.Profile.newPostText = newText
     rerenderEntireTree(Data)
+}
+
+export const subject = (observer) => {
+    rerenderEntireTree = observer
 }
 
 export default Data

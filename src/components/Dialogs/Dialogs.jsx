@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import style from "./Dialogs.module.css";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import { NavLink } from "react-router-dom";
 
 const dialogs = (props) => {
   let dialogsElements = props.dialogs.map((dialog) => (
