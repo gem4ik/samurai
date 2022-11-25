@@ -1,5 +1,5 @@
 let Store = {
-    rerenderEntireTree () {},
+    rerenderEntireTree() { },
     _Data: {
         Profile: {
             posts: [
@@ -29,25 +29,29 @@ let Store = {
             ]
         }
     },
+
     getData() {
         return this._Data
     },
-    addPost () {
-        let newPost = {
-            id: 4,
-            post: Store._Data.Profile.newPostText,
-            likeValue: 0
-        }
-        Store._Data.Profile.posts.push(newPost)
-        Store._Data.Profile.newPostText = ''
-        this.rerenderEntireTree(Store._Data)
-    },
-    updateTextValue (newText) {
-        Store._Data.Profile.newPostText = newText
-        this.rerenderEntireTree(Store._Data)
-    },
-    subject (observer) {
+    subject(observer) {
         this.rerenderEntireTree = observer
+    },
+
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: 4,
+                post: this._Data.Profile.newPostText,
+                likeValue: 0
+            }
+            this._Data.Profile.posts.push(newPost)
+            this._Data.Profile.newPostText = ''
+            this.rerenderEntireTree(this._Data)
+        } else if (action.type === 'UPDATE-TEXT-VALUE') {
+            this._Data.Profile.newPostText = action.newText
+            this.rerenderEntireTree(this._Data)
+        }
+
     }
 }
 

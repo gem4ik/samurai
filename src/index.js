@@ -8,8 +8,7 @@ let rerenderEntireTree = (Data) => {
   ReactDOM.render(
     <React.StrictMode>
       <App Data={Store.getData()}
-        addPost={Store.addPost.bind(Store)}
-        updateTextValue={Store.updateTextValue.bind(Store)} />
+        dispatch={Store.dispatch.bind(Store)}/>
     </React.StrictMode>,
     document.getElementById('root')
   );
