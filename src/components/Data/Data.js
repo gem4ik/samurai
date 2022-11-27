@@ -1,3 +1,6 @@
+const addPost = 'ADD-POST'
+const updateTextValue = 'UPDATE-TEXT-VALUE'
+
 let Store = {
     rerenderEntireTree() { },
     _Data: {
@@ -38,7 +41,7 @@ let Store = {
     },
 
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
+        if (action.type === addPost) {
             let newPost = {
                 id: 4,
                 post: this._Data.Profile.newPostText,
@@ -47,12 +50,17 @@ let Store = {
             this._Data.Profile.posts.push(newPost)
             this._Data.Profile.newPostText = ''
             this.rerenderEntireTree(this._Data)
-        } else if (action.type === 'UPDATE-TEXT-VALUE') {
+        } else if (action.type === updateTextValue) {
             this._Data.Profile.newPostText = action.newText
             this.rerenderEntireTree(this._Data)
         }
 
     }
 }
+
+export const buttonAddPostActionCreator = () => ({type: addPost}) 
+export const onPostChangeActionCreator = (newText) => ({
+    type: updateTextValue, newText: newText
+})
 
 export default Store

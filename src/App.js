@@ -23,6 +23,7 @@ const App = (props) => {
             </Route>
             <Route path="/profile/*" element={<Profile
               posts={props.Data.Profile.posts}
+              newPostText ={props.Data.Profile.newPostText}
               dispatch={props.dispatch}
             />}>
             </Route>

@@ -1,22 +1,23 @@
-import React from "react";
-import style from "./MyPosts.module.css";
-import Post from "./Post/Post";
+import React from "react"
+import style from "./MyPosts.module.css"
+import Post from "./Post/Post"
+import { onPostChangeActionCreator, buttonAddPostActionCreator } from "../../Data/Data"
 
 const MyPosts = (props) => {
   let postsElements = props.posts.map((p) => (
     <Post post={p.post} likeValue={p.likeValue} />
-  ));
+  ))
 
-  let newPostElement = React.createRef();
+  let newPostElement = React.createRef()
 
-  let ButtonAddPost = () => {
-    props.dispatch({ type: 'ADD-POST' });
-  };
+  let buttonAddPost = () => {
+    props.dispatch(buttonAddPostActionCreator())
+  }
 
   let onPostChange = () => {
-    let newText = newPostElement.current.value;
-    props.dispatch({ type: 'UPDATE-TEXT-VALUE', newText: newText });
-  };
+    let newText = newPostElement.current.value
+    props.dispatch(onPostChangeActionCreator(newText))
+  }
 
   return (
     <div>
@@ -30,12 +31,12 @@ const MyPosts = (props) => {
           className={style.textitem}
         />
       </div>
-      <button className={style.button} onClick={ButtonAddPost}>
+      <button className={style.button} onClick={buttonAddPost}>
         add post
       </button>
       <div>{postsElements}</div>
     </div>
-  );
-};
+  )
+}
 
-export default MyPosts;
+export default MyPosts

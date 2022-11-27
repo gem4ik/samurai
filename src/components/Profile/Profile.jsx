@@ -10,6 +10,7 @@ const profile = (props) => {
       <h3 className={style.posts}>
         <Myposts 
         posts={props.posts} 
+        newPostText={props.newPostText}
         dispatch={props.dispatch}/>
         </h3>
     </div>
