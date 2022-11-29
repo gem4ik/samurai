@@ -5,7 +5,6 @@ import Message from "./Message/Message";
 import { buttonAddMessageActionCreator, onMessageChangeActionCreator } from "../Data/Data";
 
 const dialogs = (props) => {
-  debugger
   let dialogsElements = props.dialogs.map((dialog) => (
     <DialogItem id={dialog.id} name={dialog.name} />
   ));
@@ -42,7 +41,7 @@ const dialogs = (props) => {
         <button 
         className={style.button} 
         onClick={buttonAddMessage}>
-          send message
+          send
           </button>
       </div>
     </div>

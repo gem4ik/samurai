@@ -1,7 +1,10 @@
-const addPost = 'ADD_POST'
-const updateTextValue = 'UPDATE-TEXT-VALUE'
+import messageReducer from "./MessageReducer"
+import profileReducer from "./ProfileReducer copy"
+
 const newMessageText = 'NEW-MESSAGE_TEXT'
 const addMessage = 'ADD_MESSAGE'
+const addPost = 'ADD_POST'
+const updateTextValue = 'UPDATE-TEXT-VALUE'
 
 let Store = {
     rerenderEntireTree() { },
@@ -36,6 +39,7 @@ let Store = {
         }
     },
 
+
     getData() {
         return this._Data
     },
@@ -43,32 +47,11 @@ let Store = {
         this.rerenderEntireTree = observer
     },
 
-    dispatch(action) {
-        if (action.type === addPost) {
-            let newPost = {
-                id: 4,
-                post: this._Data.Profile.newPostText,
-                likeValue: 0
-            }
-            this._Data.Profile.posts.push(newPost)
-            this._Data.Profile.newPostText = ''
-            this.rerenderEntireTree(this._Data)
-        } else if (action.type === updateTextValue) {
-            this._Data.Profile.newPostText = action.newText
-            this.rerenderEntireTree(this._Data)
-        } else if (action.type === addMessage) {
-            let newMessage = {
-                id: 8,
-                message: this._Data.Message.newMessageText
-            }
-            this._Data.Message.messages.push(newMessage)
-            this._Data.Message.newMessageText = ''
-            this.rerenderEntireTree(this._Data)
-        } else if (action.type === newMessageText) {
-            this._Data.Message.newMessageText = action.newMessage
-            this.rerenderEntireTree(this._Data)
-        }
 
+    dispatch(action) {
+        messageReducer(this._Data.Message, action)
+        profileReducer(this._Data.Profile, action)
+        this.rerenderEntireTree()
     }
 }
 

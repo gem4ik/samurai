@@ -1,0 +1,35 @@
+.messagePage {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.button {
+    background-color: #ff0000;
+    border: none;
+    color: white;
+    padding: 7px 10px;
+    margin: 5px 10px 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.textarea {
+    width: 250px;
+    height: 50px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+    margin-top: 20px;
+}
+
+.message {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+}
