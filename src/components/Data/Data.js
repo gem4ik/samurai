@@ -1,5 +1,7 @@
-const addPost = 'ADD-POST'
+const addPost = 'ADD_POST'
 const updateTextValue = 'UPDATE-TEXT-VALUE'
+const newMessageText = 'NEW-MESSAGE_TEXT'
+const addMessage = 'ADD_MESSAGE'
 
 let Store = {
     rerenderEntireTree() { },
@@ -29,7 +31,8 @@ let Store = {
                 { id: 5, message: 'who' },
                 { id: 6, message: 'i' },
                 { id: 7, message: 'am' }
-            ]
+            ],
+            newMessageText: ''
         }
     },
 
@@ -53,6 +56,17 @@ let Store = {
         } else if (action.type === updateTextValue) {
             this._Data.Profile.newPostText = action.newText
             this.rerenderEntireTree(this._Data)
+        } else if (action.type === addMessage) {
+            let newMessage = {
+                id: 8,
+                message: this._Data.Message.newMessageText
+            }
+            this._Data.Message.messages.push(newMessage)
+            this._Data.Message.newMessageText = ''
+            this.rerenderEntireTree(this._Data)
+        } else if (action.type === newMessageText) {
+            this._Data.Message.newMessageText = action.newMessage
+            this.rerenderEntireTree(this._Data)
         }
 
     }
@@ -60,7 +74,13 @@ let Store = {
 
 export const buttonAddPostActionCreator = () => ({type: addPost}) 
 export const onPostChangeActionCreator = (newText) => ({
-    type: updateTextValue, newText: newText
+    type: updateTextValue, 
+    newText: newText
+})
+export const buttonAddMessageActionCreator = () => ({type: addMessage}) 
+export const onMessageChangeActionCreator = (newMessage) => ({
+    type: newMessageText, 
+    newMessage: newMessage
 })
 
 export default Store
