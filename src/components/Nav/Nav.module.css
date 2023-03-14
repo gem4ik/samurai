@@ -1,9 +1,9 @@
 .nav {
   grid-area: n;
-  background-color: rgb(229, 255, 0);
   padding: 10px;
   font-family: sans-serif;
   line-height: 25px;
+  height: auto;
 }
 
 
