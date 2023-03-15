@@ -12,23 +12,21 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 const App = (props) => {
   return (
     <BrowserRouter>
-      <div className='app-wrapper'>
+      <div className='app-wrapper' >
         <Header />
         <Nav />
-        <div className='app-wrapper-content'>
+        <div>
           <Routes>
             <Route path="/dialog/*" element={<Dialogs
               dialogs={props.Data.Message.dialogs}
-              messages={props.Data.Message.messages} 
+              messages={props.Data.Message.messages}
               newMessageText={props.Data.Message.newMessageText}
-              dispatch={props.dispatch} />}>
-            </Route>
+              dispatch={props.dispatch} />}></Route>
             <Route path="/profile/*" element={<Profile
               posts={props.Data.Profile.posts}
-              newPostText ={props.Data.Profile.newPostText}
+              newPostText={props.Data.Profile.newPostText}
               dispatch={props.dispatch}
-            />}>
-            </Route>
+            />}></Route>
             <Route path="/news/*" element={<News />}></Route>
             <Route path="/music/*" element={<Music />}></Route>
             <Route path="/settings/*" element={<Settings />}></Route>
@@ -37,7 +35,6 @@ const App = (props) => {
       </div>
     </BrowserRouter>
   );
-
 }
 
 export default App

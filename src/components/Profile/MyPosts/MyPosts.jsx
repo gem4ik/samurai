@@ -20,7 +20,7 @@ const MyPosts = (props) => {
   }
 
   return (
-    <div>
+    <div className={style.posts}>
       <div>My Posts</div>
       <div className={style.textarea}>
         <textarea

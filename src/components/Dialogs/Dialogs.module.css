@@ -1,6 +1,11 @@
 .messagePage {
     display: grid;
     grid-template-columns: 2fr 10fr;
+    padding: 10px;
+    width: max-content;
+    min-width: 500px;
+    border: solid;
+    border-radius: 30px;
 }
 
 .button {

@@ -1,3 +1,8 @@
 .settings {
     color: rgb(0, 0, 0);
+    padding: 10px;
+    width: max-content;
+    min-width: 500px;
+    border: solid;
+    border-radius: 30px;
 }

@@ -3,7 +3,7 @@ import s from './News.module.css'
 
 const News = () => {
   return (
-    <header >
+    <header className={s.block}>
       <div >
       News
       </div>
