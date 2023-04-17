@@ -38,16 +38,12 @@ let Store = {
             newMessageText: ''
         }
     },
-
-
     getData() {
         return this._Data
     },
     subject(observer) {
         this.rerenderEntireTree = observer
     },
-
-
     dispatch(action) {
         messageReducer(this._Data.Message, action)
         profileReducer(this._Data.Profile, action)
